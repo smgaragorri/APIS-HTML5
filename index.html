@@ -1,0 +1,54 @@
+<!-- video con API FILE -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Laboratorio API's de HTML5</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div>
+          <form
+            action="../../form-result.php"
+            method="post"
+            enctype="multipart/form-data"
+            target="_blank"
+          >
+            <p>Selecciona un vídeo de tu archivo local para repoducirlo</p>
+            <input
+              type="file"
+              name="archivosubido"
+              id="videoFile"
+              accept=".webm,.mp4,.ogv"
+            />
+          </form>
+        </div>
+      </div>
+      <figure>
+        <video id="video" controls width="620" accept=".webm,.mp4,.ogv">
+          El navegador no soporta este video
+        </video>
+      </figure>
+      <div>
+        <button onclick="document.getElementById('video').play();">
+          Reproducir
+        </button>
+        <button onclick="document.getElementById('video').pause();">
+          Pausa
+        </button>
+        <button onclick="document.getElementById('video').volume += 0.1;">
+          Subir Volumen
+        </button>
+        <button onclick="document.getElementById('video').volume -= 0.1;">
+          Bajar Volumen
+        </button>
+        <button id="buttonMuted" onclick="muted()">Silenciar</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
